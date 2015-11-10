@@ -1,0 +1,633 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1747F0971BF15B120049B9BF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1747F0961BF15B120049B9BF /* main.m */; };
+		1747F09A1BF15B120049B9BF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1747F0991BF15B120049B9BF /* AppDelegate.m */; };
+		1747F0A01BF15B120049B9BF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1747F09E1BF15B120049B9BF /* Main.storyboard */; };
+		1747F0A21BF15B120049B9BF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1747F0A11BF15B120049B9BF /* Assets.xcassets */; };
+		1747F0A51BF15B120049B9BF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1747F0A31BF15B120049B9BF /* LaunchScreen.storyboard */; };
+		1747F0B01BF15B120049B9BF /* YKWatchOSLayoutTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1747F0AF1BF15B120049B9BF /* YKWatchOSLayoutTests.m */; };
+		1747F0BB1BF15B120049B9BF /* YKWatchOSLayoutUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1747F0BA1BF15B120049B9BF /* YKWatchOSLayoutUITests.m */; };
+		1747F0CA1BF15B3F0049B9BF /* YK_WatchOSLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 1747F0C91BF15B3F0049B9BF /* YK_WatchOSLayout.m */; };
+		1747F0CD1BF15BE70049B9BF /* collectionVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1747F0CC1BF15BE70049B9BF /* collectionVC.m */; };
+		1747F0F31BF15F110049B9BF /* MKAnnotationView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 1747F0D31BF15F110049B9BF /* MKAnnotationView+WebCache.m */; };
+		1747F0F41BF15F110049B9BF /* NSData+ImageContentType.m in Sources */ = {isa = PBXBuildFile; fileRef = 1747F0D51BF15F110049B9BF /* NSData+ImageContentType.m */; };
+		1747F0F51BF15F110049B9BF /* SDImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 1747F0D71BF15F110049B9BF /* SDImageCache.m */; };
+		1747F0F61BF15F110049B9BF /* SDWebImageCompat.m in Sources */ = {isa = PBXBuildFile; fileRef = 1747F0D91BF15F110049B9BF /* SDWebImageCompat.m */; };
+		1747F0F71BF15F110049B9BF /* SDWebImageDecoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 1747F0DB1BF15F110049B9BF /* SDWebImageDecoder.m */; };
+		1747F0F81BF15F110049B9BF /* SDWebImageDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 1747F0DD1BF15F110049B9BF /* SDWebImageDownloader.m */; };
+		1747F0F91BF15F110049B9BF /* SDWebImageDownloaderOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 1747F0DF1BF15F110049B9BF /* SDWebImageDownloaderOperation.m */; };
+		1747F0FA1BF15F110049B9BF /* SDWebImageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1747F0E11BF15F110049B9BF /* SDWebImageManager.m */; };
+		1747F0FB1BF15F110049B9BF /* SDWebImagePrefetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 1747F0E41BF15F110049B9BF /* SDWebImagePrefetcher.m */; };
+		1747F0FC1BF15F110049B9BF /* UIButton+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 1747F0E61BF15F110049B9BF /* UIButton+WebCache.m */; };
+		1747F0FD1BF15F110049B9BF /* UIImage+GIF.m in Sources */ = {isa = PBXBuildFile; fileRef = 1747F0E81BF15F110049B9BF /* UIImage+GIF.m */; };
+		1747F0FE1BF15F110049B9BF /* UIImage+MultiFormat.m in Sources */ = {isa = PBXBuildFile; fileRef = 1747F0EA1BF15F110049B9BF /* UIImage+MultiFormat.m */; };
+		1747F0FF1BF15F110049B9BF /* UIImage+WebP.m in Sources */ = {isa = PBXBuildFile; fileRef = 1747F0EC1BF15F110049B9BF /* UIImage+WebP.m */; };
+		1747F1001BF15F110049B9BF /* UIImageView+HighlightedWebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 1747F0EE1BF15F110049B9BF /* UIImageView+HighlightedWebCache.m */; };
+		1747F1011BF15F110049B9BF /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 1747F0F01BF15F110049B9BF /* UIImageView+WebCache.m */; };
+		1747F1021BF15F110049B9BF /* UIView+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 1747F0F21BF15F110049B9BF /* UIView+WebCacheOperation.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1747F0AC1BF15B120049B9BF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1747F08A1BF15B120049B9BF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1747F0911BF15B120049B9BF;
+			remoteInfo = YKWatchOSLayout;
+		};
+		1747F0B71BF15B120049B9BF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1747F08A1BF15B120049B9BF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1747F0911BF15B120049B9BF;
+			remoteInfo = YKWatchOSLayout;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1747F0921BF15B120049B9BF /* YKWatchOSLayout.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YKWatchOSLayout.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1747F0961BF15B120049B9BF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		1747F0981BF15B120049B9BF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		1747F0991BF15B120049B9BF /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		1747F09F1BF15B120049B9BF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		1747F0A11BF15B120049B9BF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1747F0A41BF15B120049B9BF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		1747F0A61BF15B120049B9BF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1747F0AB1BF15B120049B9BF /* YKWatchOSLayoutTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YKWatchOSLayoutTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1747F0AF1BF15B120049B9BF /* YKWatchOSLayoutTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YKWatchOSLayoutTests.m; sourceTree = "<group>"; };
+		1747F0B11BF15B120049B9BF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1747F0B61BF15B120049B9BF /* YKWatchOSLayoutUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YKWatchOSLayoutUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1747F0BA1BF15B120049B9BF /* YKWatchOSLayoutUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YKWatchOSLayoutUITests.m; sourceTree = "<group>"; };
+		1747F0BC1BF15B120049B9BF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1747F0C81BF15B3F0049B9BF /* YK_WatchOSLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YK_WatchOSLayout.h; sourceTree = "<group>"; };
+		1747F0C91BF15B3F0049B9BF /* YK_WatchOSLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YK_WatchOSLayout.m; sourceTree = "<group>"; };
+		1747F0CB1BF15BE70049B9BF /* collectionVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = collectionVC.h; path = ../collectionVC.h; sourceTree = "<group>"; };
+		1747F0CC1BF15BE70049B9BF /* collectionVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = collectionVC.m; path = ../collectionVC.m; sourceTree = "<group>"; };
+		1747F0D21BF15F110049B9BF /* MKAnnotationView+WebCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MKAnnotationView+WebCache.h"; sourceTree = "<group>"; };
+		1747F0D31BF15F110049B9BF /* MKAnnotationView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MKAnnotationView+WebCache.m"; sourceTree = "<group>"; };
+		1747F0D41BF15F110049B9BF /* NSData+ImageContentType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+ImageContentType.h"; sourceTree = "<group>"; };
+		1747F0D51BF15F110049B9BF /* NSData+ImageContentType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+ImageContentType.m"; sourceTree = "<group>"; };
+		1747F0D61BF15F110049B9BF /* SDImageCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDImageCache.h; sourceTree = "<group>"; };
+		1747F0D71BF15F110049B9BF /* SDImageCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDImageCache.m; sourceTree = "<group>"; };
+		1747F0D81BF15F110049B9BF /* SDWebImageCompat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDWebImageCompat.h; sourceTree = "<group>"; };
+		1747F0D91BF15F110049B9BF /* SDWebImageCompat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDWebImageCompat.m; sourceTree = "<group>"; };
+		1747F0DA1BF15F110049B9BF /* SDWebImageDecoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDWebImageDecoder.h; sourceTree = "<group>"; };
+		1747F0DB1BF15F110049B9BF /* SDWebImageDecoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDWebImageDecoder.m; sourceTree = "<group>"; };
+		1747F0DC1BF15F110049B9BF /* SDWebImageDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDWebImageDownloader.h; sourceTree = "<group>"; };
+		1747F0DD1BF15F110049B9BF /* SDWebImageDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDWebImageDownloader.m; sourceTree = "<group>"; };
+		1747F0DE1BF15F110049B9BF /* SDWebImageDownloaderOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDWebImageDownloaderOperation.h; sourceTree = "<group>"; };
+		1747F0DF1BF15F110049B9BF /* SDWebImageDownloaderOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDWebImageDownloaderOperation.m; sourceTree = "<group>"; };
+		1747F0E01BF15F110049B9BF /* SDWebImageManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDWebImageManager.h; sourceTree = "<group>"; };
+		1747F0E11BF15F110049B9BF /* SDWebImageManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDWebImageManager.m; sourceTree = "<group>"; };
+		1747F0E21BF15F110049B9BF /* SDWebImageOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDWebImageOperation.h; sourceTree = "<group>"; };
+		1747F0E31BF15F110049B9BF /* SDWebImagePrefetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDWebImagePrefetcher.h; sourceTree = "<group>"; };
+		1747F0E41BF15F110049B9BF /* SDWebImagePrefetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDWebImagePrefetcher.m; sourceTree = "<group>"; };
+		1747F0E51BF15F110049B9BF /* UIButton+WebCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+WebCache.h"; sourceTree = "<group>"; };
+		1747F0E61BF15F110049B9BF /* UIButton+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+WebCache.m"; sourceTree = "<group>"; };
+		1747F0E71BF15F110049B9BF /* UIImage+GIF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+GIF.h"; sourceTree = "<group>"; };
+		1747F0E81BF15F110049B9BF /* UIImage+GIF.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+GIF.m"; sourceTree = "<group>"; };
+		1747F0E91BF15F110049B9BF /* UIImage+MultiFormat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+MultiFormat.h"; sourceTree = "<group>"; };
+		1747F0EA1BF15F110049B9BF /* UIImage+MultiFormat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+MultiFormat.m"; sourceTree = "<group>"; };
+		1747F0EB1BF15F110049B9BF /* UIImage+WebP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+WebP.h"; sourceTree = "<group>"; };
+		1747F0EC1BF15F110049B9BF /* UIImage+WebP.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+WebP.m"; sourceTree = "<group>"; };
+		1747F0ED1BF15F110049B9BF /* UIImageView+HighlightedWebCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+HighlightedWebCache.h"; sourceTree = "<group>"; };
+		1747F0EE1BF15F110049B9BF /* UIImageView+HighlightedWebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+HighlightedWebCache.m"; sourceTree = "<group>"; };
+		1747F0EF1BF15F110049B9BF /* UIImageView+WebCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+WebCache.h"; sourceTree = "<group>"; };
+		1747F0F01BF15F110049B9BF /* UIImageView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+WebCache.m"; sourceTree = "<group>"; };
+		1747F0F11BF15F110049B9BF /* UIView+WebCacheOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+WebCacheOperation.h"; sourceTree = "<group>"; };
+		1747F0F21BF15F110049B9BF /* UIView+WebCacheOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+WebCacheOperation.m"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1747F08F1BF15B120049B9BF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1747F0A81BF15B120049B9BF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1747F0B31BF15B120049B9BF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1747F0891BF15B120049B9BF = {
+			isa = PBXGroup;
+			children = (
+				1747F0941BF15B120049B9BF /* YKWatchOSLayout */,
+				1747F0AE1BF15B120049B9BF /* YKWatchOSLayoutTests */,
+				1747F0B91BF15B120049B9BF /* YKWatchOSLayoutUITests */,
+				1747F0931BF15B120049B9BF /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		1747F0931BF15B120049B9BF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1747F0921BF15B120049B9BF /* YKWatchOSLayout.app */,
+				1747F0AB1BF15B120049B9BF /* YKWatchOSLayoutTests.xctest */,
+				1747F0B61BF15B120049B9BF /* YKWatchOSLayoutUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1747F0941BF15B120049B9BF /* YKWatchOSLayout */ = {
+			isa = PBXGroup;
+			children = (
+				1747F0D11BF15F110049B9BF /* SDWebImage */,
+				1747F0981BF15B120049B9BF /* AppDelegate.h */,
+				1747F0991BF15B120049B9BF /* AppDelegate.m */,
+				1747F0C81BF15B3F0049B9BF /* YK_WatchOSLayout.h */,
+				1747F0C91BF15B3F0049B9BF /* YK_WatchOSLayout.m */,
+				1747F0CB1BF15BE70049B9BF /* collectionVC.h */,
+				1747F0CC1BF15BE70049B9BF /* collectionVC.m */,
+				1747F09E1BF15B120049B9BF /* Main.storyboard */,
+				1747F0A11BF15B120049B9BF /* Assets.xcassets */,
+				1747F0A31BF15B120049B9BF /* LaunchScreen.storyboard */,
+				1747F0A61BF15B120049B9BF /* Info.plist */,
+				1747F0951BF15B120049B9BF /* Supporting Files */,
+			);
+			path = YKWatchOSLayout;
+			sourceTree = "<group>";
+		};
+		1747F0951BF15B120049B9BF /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				1747F0961BF15B120049B9BF /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1747F0AE1BF15B120049B9BF /* YKWatchOSLayoutTests */ = {
+			isa = PBXGroup;
+			children = (
+				1747F0AF1BF15B120049B9BF /* YKWatchOSLayoutTests.m */,
+				1747F0B11BF15B120049B9BF /* Info.plist */,
+			);
+			path = YKWatchOSLayoutTests;
+			sourceTree = "<group>";
+		};
+		1747F0B91BF15B120049B9BF /* YKWatchOSLayoutUITests */ = {
+			isa = PBXGroup;
+			children = (
+				1747F0BA1BF15B120049B9BF /* YKWatchOSLayoutUITests.m */,
+				1747F0BC1BF15B120049B9BF /* Info.plist */,
+			);
+			path = YKWatchOSLayoutUITests;
+			sourceTree = "<group>";
+		};
+		1747F0D11BF15F110049B9BF /* SDWebImage */ = {
+			isa = PBXGroup;
+			children = (
+				1747F0D21BF15F110049B9BF /* MKAnnotationView+WebCache.h */,
+				1747F0D31BF15F110049B9BF /* MKAnnotationView+WebCache.m */,
+				1747F0D41BF15F110049B9BF /* NSData+ImageContentType.h */,
+				1747F0D51BF15F110049B9BF /* NSData+ImageContentType.m */,
+				1747F0D61BF15F110049B9BF /* SDImageCache.h */,
+				1747F0D71BF15F110049B9BF /* SDImageCache.m */,
+				1747F0D81BF15F110049B9BF /* SDWebImageCompat.h */,
+				1747F0D91BF15F110049B9BF /* SDWebImageCompat.m */,
+				1747F0DA1BF15F110049B9BF /* SDWebImageDecoder.h */,
+				1747F0DB1BF15F110049B9BF /* SDWebImageDecoder.m */,
+				1747F0DC1BF15F110049B9BF /* SDWebImageDownloader.h */,
+				1747F0DD1BF15F110049B9BF /* SDWebImageDownloader.m */,
+				1747F0DE1BF15F110049B9BF /* SDWebImageDownloaderOperation.h */,
+				1747F0DF1BF15F110049B9BF /* SDWebImageDownloaderOperation.m */,
+				1747F0E01BF15F110049B9BF /* SDWebImageManager.h */,
+				1747F0E11BF15F110049B9BF /* SDWebImageManager.m */,
+				1747F0E21BF15F110049B9BF /* SDWebImageOperation.h */,
+				1747F0E31BF15F110049B9BF /* SDWebImagePrefetcher.h */,
+				1747F0E41BF15F110049B9BF /* SDWebImagePrefetcher.m */,
+				1747F0E51BF15F110049B9BF /* UIButton+WebCache.h */,
+				1747F0E61BF15F110049B9BF /* UIButton+WebCache.m */,
+				1747F0E71BF15F110049B9BF /* UIImage+GIF.h */,
+				1747F0E81BF15F110049B9BF /* UIImage+GIF.m */,
+				1747F0E91BF15F110049B9BF /* UIImage+MultiFormat.h */,
+				1747F0EA1BF15F110049B9BF /* UIImage+MultiFormat.m */,
+				1747F0EB1BF15F110049B9BF /* UIImage+WebP.h */,
+				1747F0EC1BF15F110049B9BF /* UIImage+WebP.m */,
+				1747F0ED1BF15F110049B9BF /* UIImageView+HighlightedWebCache.h */,
+				1747F0EE1BF15F110049B9BF /* UIImageView+HighlightedWebCache.m */,
+				1747F0EF1BF15F110049B9BF /* UIImageView+WebCache.h */,
+				1747F0F01BF15F110049B9BF /* UIImageView+WebCache.m */,
+				1747F0F11BF15F110049B9BF /* UIView+WebCacheOperation.h */,
+				1747F0F21BF15F110049B9BF /* UIView+WebCacheOperation.m */,
+			);
+			path = SDWebImage;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1747F0911BF15B120049B9BF /* YKWatchOSLayout */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1747F0BF1BF15B120049B9BF /* Build configuration list for PBXNativeTarget "YKWatchOSLayout" */;
+			buildPhases = (
+				1747F08E1BF15B120049B9BF /* Sources */,
+				1747F08F1BF15B120049B9BF /* Frameworks */,
+				1747F0901BF15B120049B9BF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = YKWatchOSLayout;
+			productName = YKWatchOSLayout;
+			productReference = 1747F0921BF15B120049B9BF /* YKWatchOSLayout.app */;
+			productType = "com.apple.product-type.application";
+		};
+		1747F0AA1BF15B120049B9BF /* YKWatchOSLayoutTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1747F0C21BF15B120049B9BF /* Build configuration list for PBXNativeTarget "YKWatchOSLayoutTests" */;
+			buildPhases = (
+				1747F0A71BF15B120049B9BF /* Sources */,
+				1747F0A81BF15B120049B9BF /* Frameworks */,
+				1747F0A91BF15B120049B9BF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1747F0AD1BF15B120049B9BF /* PBXTargetDependency */,
+			);
+			name = YKWatchOSLayoutTests;
+			productName = YKWatchOSLayoutTests;
+			productReference = 1747F0AB1BF15B120049B9BF /* YKWatchOSLayoutTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		1747F0B51BF15B120049B9BF /* YKWatchOSLayoutUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1747F0C51BF15B120049B9BF /* Build configuration list for PBXNativeTarget "YKWatchOSLayoutUITests" */;
+			buildPhases = (
+				1747F0B21BF15B120049B9BF /* Sources */,
+				1747F0B31BF15B120049B9BF /* Frameworks */,
+				1747F0B41BF15B120049B9BF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1747F0B81BF15B120049B9BF /* PBXTargetDependency */,
+			);
+			name = YKWatchOSLayoutUITests;
+			productName = YKWatchOSLayoutUITests;
+			productReference = 1747F0B61BF15B120049B9BF /* YKWatchOSLayoutUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1747F08A1BF15B120049B9BF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0710;
+				ORGANIZATIONNAME = doup0580;
+				TargetAttributes = {
+					1747F0911BF15B120049B9BF = {
+						CreatedOnToolsVersion = 7.1;
+					};
+					1747F0AA1BF15B120049B9BF = {
+						CreatedOnToolsVersion = 7.1;
+						TestTargetID = 1747F0911BF15B120049B9BF;
+					};
+					1747F0B51BF15B120049B9BF = {
+						CreatedOnToolsVersion = 7.1;
+						TestTargetID = 1747F0911BF15B120049B9BF;
+					};
+				};
+			};
+			buildConfigurationList = 1747F08D1BF15B120049B9BF /* Build configuration list for PBXProject "YKWatchOSLayout" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 1747F0891BF15B120049B9BF;
+			productRefGroup = 1747F0931BF15B120049B9BF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1747F0911BF15B120049B9BF /* YKWatchOSLayout */,
+				1747F0AA1BF15B120049B9BF /* YKWatchOSLayoutTests */,
+				1747F0B51BF15B120049B9BF /* YKWatchOSLayoutUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1747F0901BF15B120049B9BF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1747F0A51BF15B120049B9BF /* LaunchScreen.storyboard in Resources */,
+				1747F0A21BF15B120049B9BF /* Assets.xcassets in Resources */,
+				1747F0A01BF15B120049B9BF /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1747F0A91BF15B120049B9BF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1747F0B41BF15B120049B9BF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1747F08E1BF15B120049B9BF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1747F09A1BF15B120049B9BF /* AppDelegate.m in Sources */,
+				1747F1001BF15F110049B9BF /* UIImageView+HighlightedWebCache.m in Sources */,
+				1747F1011BF15F110049B9BF /* UIImageView+WebCache.m in Sources */,
+				1747F0FF1BF15F110049B9BF /* UIImage+WebP.m in Sources */,
+				1747F0FB1BF15F110049B9BF /* SDWebImagePrefetcher.m in Sources */,
+				1747F0971BF15B120049B9BF /* main.m in Sources */,
+				1747F0F71BF15F110049B9BF /* SDWebImageDecoder.m in Sources */,
+				1747F0F81BF15F110049B9BF /* SDWebImageDownloader.m in Sources */,
+				1747F0FA1BF15F110049B9BF /* SDWebImageManager.m in Sources */,
+				1747F1021BF15F110049B9BF /* UIView+WebCacheOperation.m in Sources */,
+				1747F0FC1BF15F110049B9BF /* UIButton+WebCache.m in Sources */,
+				1747F0FE1BF15F110049B9BF /* UIImage+MultiFormat.m in Sources */,
+				1747F0CD1BF15BE70049B9BF /* collectionVC.m in Sources */,
+				1747F0F91BF15F110049B9BF /* SDWebImageDownloaderOperation.m in Sources */,
+				1747F0FD1BF15F110049B9BF /* UIImage+GIF.m in Sources */,
+				1747F0F61BF15F110049B9BF /* SDWebImageCompat.m in Sources */,
+				1747F0F41BF15F110049B9BF /* NSData+ImageContentType.m in Sources */,
+				1747F0CA1BF15B3F0049B9BF /* YK_WatchOSLayout.m in Sources */,
+				1747F0F31BF15F110049B9BF /* MKAnnotationView+WebCache.m in Sources */,
+				1747F0F51BF15F110049B9BF /* SDImageCache.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1747F0A71BF15B120049B9BF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1747F0B01BF15B120049B9BF /* YKWatchOSLayoutTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1747F0B21BF15B120049B9BF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1747F0BB1BF15B120049B9BF /* YKWatchOSLayoutUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1747F0AD1BF15B120049B9BF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1747F0911BF15B120049B9BF /* YKWatchOSLayout */;
+			targetProxy = 1747F0AC1BF15B120049B9BF /* PBXContainerItemProxy */;
+		};
+		1747F0B81BF15B120049B9BF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1747F0911BF15B120049B9BF /* YKWatchOSLayout */;
+			targetProxy = 1747F0B71BF15B120049B9BF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		1747F09E1BF15B120049B9BF /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1747F09F1BF15B120049B9BF /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		1747F0A31BF15B120049B9BF /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1747F0A41BF15B120049B9BF /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		1747F0BD1BF15B120049B9BF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		1747F0BE1BF15B120049B9BF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		1747F0C01BF15B120049B9BF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = YKWatchOSLayout/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = doup0580.YKWatchOSLayout;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		1747F0C11BF15B120049B9BF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = YKWatchOSLayout/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = doup0580.YKWatchOSLayout;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		1747F0C31BF15B120049B9BF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = YKWatchOSLayoutTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = doup0580.YKWatchOSLayoutTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/YKWatchOSLayout.app/YKWatchOSLayout";
+			};
+			name = Debug;
+		};
+		1747F0C41BF15B120049B9BF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = YKWatchOSLayoutTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = doup0580.YKWatchOSLayoutTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/YKWatchOSLayout.app/YKWatchOSLayout";
+			};
+			name = Release;
+		};
+		1747F0C61BF15B120049B9BF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = YKWatchOSLayoutUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = doup0580.YKWatchOSLayoutUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = YKWatchOSLayout;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		1747F0C71BF15B120049B9BF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = YKWatchOSLayoutUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = doup0580.YKWatchOSLayoutUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = YKWatchOSLayout;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1747F08D1BF15B120049B9BF /* Build configuration list for PBXProject "YKWatchOSLayout" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1747F0BD1BF15B120049B9BF /* Debug */,
+				1747F0BE1BF15B120049B9BF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1747F0BF1BF15B120049B9BF /* Build configuration list for PBXNativeTarget "YKWatchOSLayout" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1747F0C01BF15B120049B9BF /* Debug */,
+				1747F0C11BF15B120049B9BF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		1747F0C21BF15B120049B9BF /* Build configuration list for PBXNativeTarget "YKWatchOSLayoutTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1747F0C31BF15B120049B9BF /* Debug */,
+				1747F0C41BF15B120049B9BF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		1747F0C51BF15B120049B9BF /* Build configuration list for PBXNativeTarget "YKWatchOSLayoutUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1747F0C61BF15B120049B9BF /* Debug */,
+				1747F0C71BF15B120049B9BF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1747F08A1BF15B120049B9BF /* Project object */;
+}
