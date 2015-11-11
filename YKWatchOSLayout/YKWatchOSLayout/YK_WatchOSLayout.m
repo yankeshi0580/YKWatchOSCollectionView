@@ -6,10 +6,11 @@
 //  Copyright © 2015年 doup0580. All rights reserved.
 //
 
-#import "YK_WatchOSLayout.h"
 
-//也喜欢研究动画效果方面的朋友 加我q 1425121517
+#import "YK_WatchOSLayout.h"
 @interface YK_WatchOSLayout()
+//也喜欢研究动画效果方面的朋友 加我q 1425121517
+
 //宽距
 @property(nonatomic,assign)CGFloat itemWidthPading;
 //高距
@@ -22,14 +23,25 @@
 //设置初始位置
 @property(nonatomic,assign)BOOL InitalContentOffset;
 
+@property(nonatomic,strong)  NSIndexPath *lastIndexPath;
+
+@property(nonatomic,assign)CGPoint lastPosition;
+
+@property(nonatomic,assign)int circleRow;
 
 //存储attributes
 @property(nonatomic,strong)NSMutableArray *itemsAttributes;
 
 
 @end
-@implementation YK_WatchOSLayout
-
+@implementation YK_WatchOSLayout{
+}
+-(NSIndexPath *)lastIndexPath{
+    if (!_lastIndexPath) {
+        _lastIndexPath=[NSIndexPath indexPathForItem:0 inSection:0 ];
+    }
+    return _lastIndexPath;
+}
 -(NSUInteger)itemsCount{
     if (!_itemsCount) {
         _itemsCount=[self.collectionView numberOfItemsInSection:0];
@@ -50,51 +62,123 @@
 }
 // 限制显示行数和列数
 
-#define INCLOUD_ROW_ITEM 8
-#define INCLOUD_LINE_ITEM 3
+#define INCLOUD_ROW_ITEM 6
+#define INCLOUD_LINE_ITEM 4
 
 -(CGFloat)itemWidthPading{
     if (!_itemWidthPading) {
         _itemWidthPading=(self.collectionViewWidth-self.itemSize.width*INCLOUD_LINE_ITEM)/(INCLOUD_LINE_ITEM-1);
     }
-
+    
     return _itemWidthPading;
 }
 -(CGFloat)itemHeightPading{
     if (!_itemHeightPading) {
         _itemHeightPading=(self.collectionViewHeight-self.itemSize.height*INCLOUD_ROW_ITEM)/(INCLOUD_ROW_ITEM-1);
+        
     }
     return _itemHeightPading;
     
 }
-#define MAX_ROW_NUMBER 15
-#define MAX_LINE_NUMBER 10
-//布局位置 限制行数和列数
+//布局内容
+-(void)circleStartItemPosition:(CGPoint)position cirleEndRow:(int)row endItem:(int)item{
+    self.InitalContentOffset=YES;
+    NSIndexPath *indexPath;
+    UICollectionViewLayoutAttributes *attributes;
+    self.lastPosition=position;
+     for (int i=0; i<=row; i++) {
+        
+        int cirleItem=4*i;
+         if (i==0&&cirleItem==0){
+            indexPath=[NSIndexPath indexPathForItem:i inSection:0];
+            attributes=[UICollectionViewLayoutAttributes layoutAttributesForCellWithIndexPath:indexPath];
+            [attributes setBounds:CGRectMake(0, 0, self.itemSize.width, self.itemSize.height)];
+            [attributes setCenter:position];
+            [self.itemsAttributes addObject:attributes];
+            
+            cirleItem=0;;
+        }
+        else if (i==row) {
+            cirleItem=item+1;
+        }
+            for (int j=0; j<cirleItem; j++) {
+            CGPoint processPoint=CGPointZero;
+            if (j==0) {
+                
+                processPoint=CGPointMake((-self.itemWidthPading-self.itemSize.width)/2.0, -self.itemSize.height-self.itemHeightPading);
+              }
+            //           负向纵向的操作
+            else if(j<i*1){
+                
+                processPoint=CGPointMake(0,2*(-self.itemHeightPading-self.itemSize.height));
+               }
+            //            正向横向的操作
+            else if (j<i*2){
+                processPoint=CGPointMake(self.itemWidthPading+self.itemSize.width,0);
+                   }
+            //            正向纵向的操作
+            else if (j<i*3){
+                
+                processPoint=CGPointMake(0,1*2*(self.itemHeightPading+self.itemSize.height));
+                
+                
+            }
+            //            负向横向的操作
+            else if (j<i*4){
+                
+                processPoint=CGPointMake(-self.itemWidthPading-self.itemSize.width,0);
+                
+            }
+            //            添加attrubites
+            self.lastPosition=CGPointMake(self.lastPosition.x+processPoint.x, self.lastPosition.y+processPoint.y);
+            indexPath=[NSIndexPath indexPathForItem:[self findItemCircleRow:i item:j] inSection:0];
+            attributes=[UICollectionViewLayoutAttributes layoutAttributesForCellWithIndexPath:indexPath];
+            [attributes setBounds:CGRectMake(0, 0, self.itemSize.width, self.itemSize.height)];
+            [attributes setCenter:self.lastPosition];
+            [self.itemsAttributes addObject:attributes];
+            
+        }
+    }
+    
+}
+//进这个方法排除了第一圈的item
+-(int)findItemCircleRow:(int)row item:(int)item{
+    int itemsNumber=1;
+    for (int index=0; index<row; index++) {
+        itemsNumber+=4*index;
+    }
+    itemsNumber+=item;
+    return itemsNumber;
+    
+}
+//开始布局
+-(void)startCountLayout{
+    int item=(int)self.itemsCount-1;
+    int row=0;
+    while (1) {
+        if (item>=4*row) {
+            if (row==0) {
+                item-=1;
+            }
+            else{
+                item-=4*row;
+            }
+            row++;
+           }
+        else{
+            break;
+           }
+    }
+    self.circleRow=row;
+    CGPoint startPosition=CGPointMake([self collectionViewContentWidth]/2, [self collectionViewContentHeight]/2);
+    [self circleStartItemPosition:startPosition cirleEndRow:row endItem:item];
+}
+
 -(NSMutableArray *)itemsAttributes{
     if (!_itemsAttributes) {
         _itemsAttributes=[NSMutableArray arrayWithCapacity:self.itemsCount];
-        
-        NSUInteger row=self.itemsCount/MAX_LINE_NUMBER;
-                   for (int i=0; i<=row; i++) {
-            NSUInteger line=MAX_LINE_NUMBER;
-
-            if (i==row) {
-                line=self.itemsCount%MAX_LINE_NUMBER;
-                         }
-            for (int j=0; j<line; j++) {
-     //设置初始位置 让每个点都能到达屏幕中点
-        
-               CGPoint originalPoint=CGPointMake(self.collectionViewWidth/2.0, self.collectionViewHeight/2.0);
-             originalPoint.x+=(i%2==0)? 0:(self.itemSize.width+self.itemWidthPading)/2;
-
-                CGPoint itemCenter=CGPointMake(originalPoint.x+j*(self.itemSize.width+self.itemWidthPading),originalPoint.y+i*(self.itemSize.height+self.itemHeightPading));
-                NSIndexPath *indexPath=[NSIndexPath indexPathForItem:i*MAX_LINE_NUMBER+j inSection:0];
-                UICollectionViewLayoutAttributes *att=[UICollectionViewLayoutAttributes layoutAttributesForCellWithIndexPath:indexPath];
-                 [att setBounds:CGRectMake(0, 0, self.itemSize.width, self.itemSize.height)];
-                [att setCenter:itemCenter];
-                [self.itemsAttributes addObject:att];
-
-            }
+        if (self.itemsCount!=0) {
+            [self startCountLayout];
         }
         
     }
@@ -104,47 +188,31 @@
 //设定初始位置
 -(void)setInitalContentOffset:(BOOL)InitalContentOffset{
     if (!_InitalContentOffset) {
-        [self.collectionView setContentOffset:CGPointMake((self.collectionViewWidth-self.itemSize.width)/2, (self.collectionViewHeight-self.itemSize.height)/2)];
+         float time=(self.circleRow%2==0)?1:1/2;
+        CGPoint initalPoint=  CGPointMake(([self collectionViewContentWidth]-self.collectionViewWidth)/2+self.circleRow*time*(self.itemSize.width+self.itemWidthPading),( [self collectionViewContentHeight]-self.collectionViewHeight)/2+(self.itemSize.height+self.itemHeightPading)*time*2*self.circleRow);
+        [self.collectionView setContentOffset:initalPoint];
+        
     }
     
     _InitalContentOffset=InitalContentOffset;
     
-
+    
 }
 -(CGFloat )collectionViewContentWidth{
-    CGFloat width;
-    UICollectionViewLayoutAttributes *att=[self.itemsAttributes lastObject];
-
-    if (self. itemsCount<MAX_LINE_NUMBER) {
-        width=att.center.x+self.collectionViewWidth/2.0;
-    }
-    else if (self.itemsCount<MAX_LINE_NUMBER*2){
-        width=self.collectionViewWidth+(MAX_LINE_NUMBER-1)*(self.itemSize.width+self.itemWidthPading);
-    }
-    else{
-        width=self.collectionViewWidth+(MAX_LINE_NUMBER-1)*(self.itemSize.width+self.itemWidthPading)+(self.itemSize.width+self.itemWidthPading)/2;;
-    }
-    return width;
-
+     return self.circleRow*(self.itemWidthPading+self.itemSize.width)+self.collectionViewWidth;
 }
 -(CGFloat )collectionViewContentHeight{
-    CGFloat height;
-    UICollectionViewLayoutAttributes *att=[self.itemsAttributes lastObject];
-    
-     height=att.center.y+self.collectionViewHeight/2.0;
-      return height;
+    return 2*self.circleRow*(self.itemHeightPading+self.itemSize.height)+self.collectionViewHeight;
+
     
 }
 -(CGSize)collectionViewContentSize{
-
-    return CGSizeMake([self collectionViewContentWidth], [self collectionViewContentHeight]);
+       return CGSizeMake([self collectionViewContentWidth], [self collectionViewContentHeight]);
 }
 -(void)prepareLayout
 {
     [super prepareLayout];
-    
     self.itemSize=CGSizeMake(60, 60);
-    self.InitalContentOffset=YES;
     
 }
 //缩放大小 和 离中心距离的 1/4 椭圆 函数
@@ -154,16 +222,16 @@
     CGFloat distanceXSquare=ceilf( powf(distanceX, 2));
     CGFloat decideResult=(distanceXSquare/raduisSquare);
     CGFloat flactor=sqrtl(1-MIN(decideResult, 1));
-
+    
     return flactor;
-   }
+}
 
 -(NSArray<UICollectionViewLayoutAttributes *> *)layoutAttributesForElementsInRect:(CGRect)rect{
     NSMutableArray *resultArray=[NSMutableArray array];
     CGRect visibleRect;
     visibleRect.origin = self.collectionView.contentOffset;
     visibleRect.size = self.collectionView.bounds.size;
-
+    
     for (UICollectionViewLayoutAttributes *attributes in self.itemsAttributes) {
         if (CGRectIntersectsRect(attributes.frame, rect)) {
             CGFloat distanceX=CGRectGetMidX(visibleRect)-attributes.center.x;
@@ -172,14 +240,14 @@
             CGFloat limitHeight=(self.collectionViewHeight/2.0-self.itemSize.height*3/2.0-self.itemHeightPading);
             CGAffineTransform scale;
             if (ABS(distanceY)>limitHeight) {
-                 CGFloat distanceYFlactor=[self distanceFlactor:ABS(distanceY)-limitHeight isHorizontal:NO];
-
+                CGFloat distanceYFlactor=[self distanceFlactor:ABS(distanceY)-limitHeight isHorizontal:NO];
+                
                 scale=CGAffineTransformMakeScale(distanceYFlactor*distanceXFlactor, distanceYFlactor*distanceXFlactor);
             }
             else{
                 scale=CGAffineTransformMakeScale(distanceXFlactor  ,distanceXFlactor ) ;
-          }
-      
+            }
+            
             [attributes setTransform:scale];
             [resultArray addObject:attributes];
         }
@@ -196,42 +264,41 @@
     return resultArray;
 }
 //修正位置
-/*
--(CGPoint)targetContentOffsetForProposedContentOffset:(CGPoint)proposedContentOffset withScrollingVelocity:(CGPoint)velocity{
-    CGFloat fixOffsetX=0;
-    CGFloat fixOffsetY=0;
-    CGFloat fixOffsetDistance=MAXFLOAT;
-
-    CGPoint visibleCenter = CGPointMake(proposedContentOffset.x + self.collectionViewWidth / 2.0, proposedContentOffset.y + self.collectionViewHeight / 2.0);
-    CGRect visibleRect=CGRectMake(proposedContentOffset.x , proposedContentOffset.y , self.collectionViewWidth , self.collectionViewHeight);
-    NSArray *visibleArray = [self getSuperElementsInRect:visibleRect];
-
-    for (UICollectionViewLayoutAttributes *attributes in visibleArray) {
-        CGFloat distanceX = attributes.center.x - visibleCenter.x  ;
-        CGFloat distanceY =  attributes.center.y - visibleCenter.y ;
-        CGFloat distanceCenter = sqrtf(powf(distanceX , 2) + powf(distanceY , 2));
-        if (distanceCenter < fixOffsetDistance) {
-            fixOffsetDistance=distanceCenter;
-            fixOffsetX = distanceX;
-            fixOffsetY = distanceY;
-        }
-        
-         }
-    
-    self.collectionView.decelerationRate=1;
-    return CGPointMake(proposedContentOffset.x+fixOffsetX, proposedContentOffset.y+fixOffsetY);
-}*/
+//-(CGPoint)targetContentOffsetForProposedContentOffset:(CGPoint)proposedContentOffset withScrollingVelocity:(CGPoint)velocity{
+//    CGFloat fixOffsetX=0;
+//    CGFloat fixOffsetY=0;
+//    CGFloat fixOffsetDistance=MAXFLOAT;
+//
+//    CGPoint visibleCenter = CGPointMake(proposedContentOffset.x + self.collectionViewWidth / 2.0, proposedContentOffset.y + self.collectionViewHeight / 2.0);
+//    CGRect visibleRect=CGRectMake(proposedContentOffset.x , proposedContentOffset.y , self.collectionViewWidth , self.collectionViewHeight);
+//    NSArray *visibleArray = [self getSuperElementsInRect:visibleRect];
+//
+//    for (UICollectionViewLayoutAttributes *attributes in visibleArray) {
+//        CGFloat distanceX = attributes.center.x - visibleCenter.x  ;
+//        CGFloat distanceY =  attributes.center.y - visibleCenter.y ;
+//        CGFloat distanceCenter = sqrtf(powf(distanceX , 2) + powf(distanceY , 2));
+//        if (distanceCenter < fixOffsetDistance) {
+//            fixOffsetDistance=distanceCenter;
+//            fixOffsetX = distanceX;
+//            fixOffsetY = distanceY;
+//        }
+//
+//         }
+//
+//    self.collectionView.decelerationRate=1;
+//    return CGPointMake(proposedContentOffset.x+fixOffsetX, proposedContentOffset.y+fixOffsetY);
+//}
 -(BOOL)shouldInvalidateLayoutForBoundsChange:(CGRect)newBounds{
     return YES;}
 -(UICollectionViewLayoutAttributes *)layoutAttributesForItemAtIndexPath:(NSIndexPath *)indexPath{
     return self.itemsAttributes[indexPath.row];
 }
+
 //-(UICollectionViewLayoutInvalidationContext *)invalidationContextForInteractivelyMovingItems:(NSArray<NSIndexPath *> *)targetIndexPaths withTargetPosition:(CGPoint)targetPosition previousIndexPaths:(NSArray<NSIndexPath *> *)previousIndexPaths previousPosition:(CGPoint)previousPosition{
-//
-//}
-//-(UICollectionViewLayoutInvalidationContext *)invalidationContextForEndingInteractiveMovementOfItemsToFinalIndexPaths:(NSArray<NSIndexPath *> *)indexPaths previousIndexPaths:(NSArray<NSIndexPath *> *)previousIndexPaths movementCancelled:(BOOL)movementCancelled{
-//
-//
+//    UICollectionViewLayoutInvalidationContext *context=[super invalidationContextForInteractivelyMovingItems:targetIndexPaths withTargetPosition:targetPosition previousIndexPaths:previousIndexPaths previousPosition:previousPosition];
+//      return context;
+//    
+//    
 //}
 
 
